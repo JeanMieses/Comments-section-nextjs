@@ -1,0 +1,48 @@
+.addComment {
+  width: 92%;
+  background-color: #fff;
+}
+
+.addComment form div {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto 1em auto;
+  height: 40px;
+}
+
+.addComment form textarea {
+  height: 50px;
+  width: 90%;
+  margin: 1em 1.2em;
+  border-color: hsl(223, 19%, 93%);
+  border-width: 2px;
+}
+
+.addComment form div img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.addComment form div button {
+    border: none;
+    background-color: hsl(238, 40%, 52%);
+    color: #fff;
+    width: 70px;
+    height: 30px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+
+@media screen and (min-width: 765px) {
+    .addComment {
+        width: 50%;
+      }
+}
+ 

@@ -1,0 +1,27 @@
+.list {
+    background-color: inherit;
+    /* border: 1px solid red; */
+    width: 92%;
+    margin: 2em 0 0 0;
+    padding: 0;
+}
+
+.list li {
+    background-color: #fff;
+    list-style-type: none;
+    margin: 1.2em 0;
+    border-radius: 10px;
+}
+
+.list li p {
+    margin: 0;
+    
+}
+
+
+@media screen and (min-width: 765px) {
+    .list {
+        width: 50%;
+    }
+}
+    
