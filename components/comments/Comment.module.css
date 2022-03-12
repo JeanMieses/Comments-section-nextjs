@@ -43,7 +43,6 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    
 }
 
 .post .vote button {
@@ -77,3 +76,47 @@
     border-radius: 0 10px 10px 0;
 }
 
+.post .userOptions {
+    float: right;
+    position: relative;
+    top: -1.5em;
+    width: 138px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+
+.post .userOptions button {
+    background-color: inherit;
+    border: none;
+    color:  hsl(211, 10%, 45%);
+    width: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-transform: capitalize;
+}
+
+.post .userOptions button:nth-of-type(1) {
+   color: hsl(358, 79%, 66%)
+ 
+} 
+
+.post .userOptions button:nth-of-type(2) {
+    color: hsl(238, 40%, 52%)
+ } 
+ 
+
+.post .userOptions button img{
+    max-height: 100%;
+    width: 17px;
+    height: 17px;
+    margin-right: 0.2em;
+
+}
+
+.post .userOptions button:hover {
+    transform: scale(1.15);
+    transition: all 0.2s ease-in-out;
+}

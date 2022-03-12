@@ -23,12 +23,10 @@ const AddComment = () => {
           username: 'Someone1234'
         }
       }),
-
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
     }
-      
     })
 
     setComment("");

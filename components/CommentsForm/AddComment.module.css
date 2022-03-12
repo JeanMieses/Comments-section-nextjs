@@ -30,19 +30,22 @@
 }
 
 .addComment form div button {
-    border: none;
-    background-color: hsl(238, 40%, 52%);
-    color: #fff;
-    width: 70px;
-    height: 30px;
-    border-radius: 6px;
-    font-weight: bold;
+  border: none;
+  background-color: hsl(238, 40%, 52%);
+  color: #fff;
+  width: 70px;
+  height: 30px;
+  border-radius: 6px;
+  font-weight: bold;
 }
 
+.addComment form div button:hover {
+  transform: scale(1.15);
+  transition: all 0.2s ease-in-out;
+}
 
 @media screen and (min-width: 765px) {
-    .addComment {
-        width: 50%;
-      }
+  .addComment {
+    width: 50%;
+  }
 }
- 

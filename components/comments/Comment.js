@@ -1,6 +1,27 @@
+import { useState } from "react";
+import { useRouter } from "next/router";
+import Edit from "./Edit";
 import classes from "./Comment.module.css";
 
 const Comment = ({ comment }) => {
+  const [isEditing, setIsEditing] = useState(false);
+  const router = useRouter();
+
+  const deletetHandler = async () => {
+    await fetch("/api/delete-comment", {
+      method: "DELETE",
+      body: JSON.stringify({ id: comment.id }),
+      headers: {
+        "Content-Type": "application/json",
+        'Accept':'application/json'
+      },
+    });
+    router.replace("/");
+  };
+
+  const isEditingHandler = () => {
+    setIsEditing(true);
+  };
 
   return (
     <li className={classes.post}>
@@ -15,13 +36,35 @@ const Comment = ({ comment }) => {
       </div>
 
       <div className={classes.content}>
-        <p>{comment.content} </p>
+        {!isEditing && <p>{comment.content} </p>}
+        {isEditing && (
+          <Edit
+            setIsEditing={setIsEditing}
+            id={comment.id}
+            text={comment.content}
+          />
+        )}
 
-        <div className={classes.vote}>
-          <button>+</button>
-          <span>{comment.score}</span>
-          <button>-</button>
-        </div>
+        {!isEditing && (
+          <span className={classes.vote}>
+            <button>+</button>
+            <span>{comment.score}</span>
+            <button>-</button>
+          </span>
+        )}
+
+        {!isEditing && (
+          <span className={classes.userOptions}>
+            <button onClick={deletetHandler}>
+              <img src="https://img.icons8.com/plasticine/filled-trash.png" />{" "}
+              delete
+            </button>
+            <button onClick={isEditingHandler}>
+              <img src="https://img.icons8.com/material/24/000000/edit--v1.png" />{" "}
+              edit
+            </button>
+          </span>
+        )}
       </div>
     </li>
   );
